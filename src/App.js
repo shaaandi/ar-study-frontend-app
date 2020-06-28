@@ -9,12 +9,6 @@ import { Home, Authentication, Logout, Book } from './screens';
 import { Loading } from './components';
 import { useSelector } from 'react-redux';
 
-// configuration of enviroment virables;
-let domain = '';
-if (process.env.NODE_ENV === 'production') {
-    domain = `/${process.env.REACT_APP_PROD_DOMAIN}`;
-}
-
 const App = (props) => {
     const { isLoaded, isEmpty } = useSelector(
         (state) => state.firebase.profile
@@ -28,15 +22,9 @@ const App = (props) => {
         return (
             <Router>
                 <Switch>
-                    <Route
-                        path={`${domain}/signup`}
-                        component={() => <h1>Singup</h1>}
-                    />
-                    <Route
-                        path={`${domain}/login`}
-                        component={Authentication}
-                    />
-                    <Redirect path={`${domain}/`} to="/login" />
+                    <Route path="/signup" component={() => <h1>Singup</h1>} />
+                    <Route path="/login" component={Authentication} />
+                    <Redirect path="/" to="/login" />
                 </Switch>
             </Router>
         );
@@ -45,10 +33,10 @@ const App = (props) => {
     return (
         <Router>
             <Switch>
-                <Route path={`${domain}/logout`} component={Logout} />
-                <Route path={`${domain}/dashboard`} component={Home} />
-                <Route path={`${domain}/books/:bookId`} component={Book} />
-                <Redirect path={`${domain}/`} to="dashboard" />
+                <Route path="/logout" component={Logout} />
+                <Route path="/dashboard" component={Home} />
+                <Route path={'/books/:bookId'} component={Book} />
+                <Redirect path="/" to="dashboard" />
             </Switch>
         </Router>
     );

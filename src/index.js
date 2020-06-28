@@ -15,15 +15,44 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import reducer from './store/reducers';
 
 // firebase config;
+const ENV = process.env.NODE_ENV;
+const API_KEY =
+    ENV === 'production'
+        ? process.env.REACT_APP_API_KEY
+        : process.env.REACT_APP_API_KEY_DEV;
+const AUTH_DOMAIN =
+    ENV === 'production'
+        ? process.env.REACT_APP_AUTH_DOMAIN
+        : process.env.REACT_APP_AUTH_DOMAIN_DEV;
+const DB_URL =
+    ENV === 'production'
+        ? process.env.REACT_APP_DATABASE_URL
+        : process.env.REACT_APP_DATABASE_URL_DEV;
+const PROJECT_ID =
+    ENV === 'production'
+        ? process.env.REACT_APP_PROJECT_ID
+        : process.env.REACT_APP_PROJECT_ID_DEV;
+const STORAGE_BUCKET =
+    ENV === 'production'
+        ? process.env.REACT_APP_STORAGE_BUCKET
+        : process.env.REACT_APP_STORAGE_BUCKET_DEV;
+const MESSAGING_SENDER_ID =
+    ENV === 'production'
+        ? process.env.REACT_APP_MESSAGING_SENDER_ID
+        : process.env.REACT_APP_MESSAGING_SENDER_ID_DEV;
+const APP_ID =
+    ENV === 'production'
+        ? process.env.REACT_APP_APP_ID
+        : process.env.REACT_APP_APP_ID_DEV;
 
 const fbConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    databaseURL: DB_URL,
+    projectId: PROJECT_ID,
+    storageBucket: STORAGE_BUCKET,
+    messagingSenderId: MESSAGING_SENDER_ID,
+    appId: APP_ID,
 };
 
 // react-redux-firebase config;
