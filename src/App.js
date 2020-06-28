@@ -36,7 +36,7 @@ const App = (props) => {
                 <Route path="/logout" component={Logout} />
                 <Route path="/dashboard" component={Home} />
                 <Route path={'/books/:bookId'} component={Book} />
-                <Redirect path="/" to="/dashboard" />
+                <Redirect path="/" to="dashboard" />
             </Switch>
         </Router>
     );
