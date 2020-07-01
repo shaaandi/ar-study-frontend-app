@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col, Typography } from 'antd';
 import styled from 'styled-components';
 import Avatar from './AccountAvatar';
+import { useSelector } from 'react-redux';
 
 import useWindowSize from '../hooks/useWindowSize';
 
@@ -21,6 +22,10 @@ const BaseHeader = styled.div`
 
 const Header = (props) => {
     const [drawer, setDrawer] = useState(false);
+    const { fullname } = useSelector(({ firebase }) => firebase.profile);
+
+    let nameString = fullname.split(' ');
+    const shortName = nameString[0] + ' ' + nameString[1][0];
     const window = useWindowSize();
 
     let drawerSize = '100%';
@@ -52,7 +57,7 @@ const Header = (props) => {
                         </Title>
                         <Avatar
                             onClick={() => setDrawer(true)}
-                            name={'Saad A.'}
+                            name={shortName}
                         />
                     </BaseHeader>
                 </Col>

@@ -4,6 +4,7 @@ import { Drawer, Row, Col, Typography } from 'antd';
 import { LogoutOutlined } from '@ant-design/icons';
 import ProfileImage from './ProfileImage';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const { Text } = Typography;
 
@@ -14,6 +15,11 @@ const LogoutWraper = styled.div`
 
 function ProfileDrawer(props) {
     const { onClose, closable, placement, visible, width } = props;
+    // getting user profile data;
+    const { profile } = useSelector(({ firebase }) => firebase);
+
+    const { email, fullname, institute } = profile;
+
     let history = useHistory();
 
     return (
@@ -68,16 +74,22 @@ function ProfileDrawer(props) {
             </Row>
             <Row style={{ marginTop: '10px' }}>
                 <Col span={8} style={{ fontSize: 'large' }}>
+                    <Text strong={true}>Email: </Text>
+                </Col>
+                <Col span={16} style={{ fontSize: 'large' }}>
+                    <Text>{email}</Text>
+                </Col>
+                <Col span={8} style={{ fontSize: 'large' }}>
                     <Text strong={true}>Full Name: </Text>
                 </Col>
                 <Col span={16} style={{ fontSize: 'large' }}>
-                    <Text>Saad Awan</Text>
+                    <Text>{fullname}</Text>
                 </Col>
                 <Col span={8} style={{ fontSize: 'large' }}>
                     <Text strong={true}>Institute: </Text>
                 </Col>
                 <Col span={16} style={{ fontSize: 'large' }}>
-                    <Text>National University of Science and Technology</Text>
+                    <Text>{institute}</Text>
                 </Col>
                 <Col span={8} style={{ fontSize: 'large' }}>
                     <Text strong={true}>Class of: </Text>
