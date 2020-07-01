@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useFirebase } from 'react-redux-firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import * as firebaseui from 'firebaseui';
@@ -8,7 +7,6 @@ import * as firebaseui from 'firebaseui';
 
 function Authentication() {
     const firebase = useFirebase();
-    const auth = useSelector((state) => state.firebase.auth);
 
     return (
         <div>

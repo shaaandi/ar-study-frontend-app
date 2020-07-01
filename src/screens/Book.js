@@ -12,8 +12,8 @@ const { Content } = Layout;
 const { Title } = Typography;
 
 function Book(props) {
-    const { match, history } = props;
-    const bookId = match?.params?.bookId;
+    const { history } = props;
+
     const [drawer, setDrawer] = useState(false);
     const window = useWindowSize();
 

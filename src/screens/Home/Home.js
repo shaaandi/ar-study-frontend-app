@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useFirebase, isLoaded, isEmpty } from 'react-redux-firebase';
-import { Button, Layout } from 'antd';
+import { Layout } from 'antd';
 import { Header, BooksList } from '../../components';
 
 const { Content } = Layout;
 
 const Home = (props) => {
-    const firebase = useFirebase();
     return (
         <>
             <Header />

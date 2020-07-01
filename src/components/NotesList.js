@@ -1,7 +1,7 @@
 import React from 'react';
-import { List, Skeleton, Typography, Card } from 'antd';
+import { List, Card } from 'antd';
 import { useHistory } from 'react-router-dom';
-import { useFirebaseConnect, populate } from 'react-redux-firebase';
+import { useFirebaseConnect } from 'react-redux-firebase';
 import { useSelector } from 'react-redux';
 
 import Loading from './Loading';
@@ -21,8 +21,6 @@ const notes = [
 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.`,
     },
 ];
-
-const { Text } = Typography;
 
 function NotesList(props) {
     const uid = useSelector((state) => state.firebase?.auth?.uid);

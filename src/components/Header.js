@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Row, Col, Typography, Drawer } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import styled from 'styled-components';
 import Avatar from './AccountAvatar';
-
-import { useHistory } from 'react-router-dom';
 
 import useWindowSize from '../hooks/useWindowSize';
 

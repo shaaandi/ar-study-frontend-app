@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useFirebase, isLoaded, isEmpty } from 'react-redux-firebase';
+import { useFirebase } from 'react-redux-firebase';
 
 function Logout(props) {
     const firebase = useFirebase();
     useEffect(() => {
         firebase.logout();
-    }, []);
+    }, [firebase]);
     return <h1>Byebye</h1>;
 }
 

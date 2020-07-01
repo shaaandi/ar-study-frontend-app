@@ -11,30 +11,6 @@ const { Meta } = Card;
 
 const { Title } = Typography;
 
-const list = [
-    {
-        IBAN: '895-453-34-4',
-        imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/arstudy-d71ad.appspot.com/o/book_cover_images%2F792EAA9B-8180-469A-8AA2-3D2C750BCA77?alt=media&token=f1a79345-498e-42a2-81ec-f384337bbc23',
-        pages: 247,
-        title: 'IGCSE Biology',
-    },
-    {
-        IBAN: '123-232-23-22',
-        imageUrl:
-            'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-july-2019/large/bbcjuly19verynice.jpg?1384968217',
-        pages: 147,
-        title: 'Very Nice - by Marcy Denmarchy',
-    },
-    {
-        IBAN: '222-432-53-22',
-        imageUrl:
-            'https://2.bp.blogspot.com/-fZoGdYQxf1M/TgvWYwPtA2I/AAAAAAAAJI0/1YQZfEFPN4A/s1600/A%252BGame%252Bof%252BThrones.jpg',
-        pages: 347,
-        title: 'A Games of Thrones - by George Martin',
-    },
-];
-
 const BooksList = (props) => {
     useFirebaseConnect([{ path: 'user-book-pages' }, { path: 'books' }]);
     const window = useWindowSize();
