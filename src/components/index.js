@@ -3,3 +3,4 @@ export { default as Loading } from './Loading';
 export { default as BooksList } from './BooksList';
 export { default as Noteslist } from './NotesList';
 export { default as Note } from './Note';
+export { default as Auth } from './Auth';
